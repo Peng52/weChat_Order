@@ -18,8 +18,15 @@ public interface CategoryService {
     */
     ProductCategory findOne(ProductCategory params);
     /**
-    *
+    *指定类目查找
     */
+    List<ProductCategory> findByCategoryTypeIn(List<Integer> types);
+    /**
+    *保存、更新操作
+    */
+    void save(ProductCategory category);
+
+
     
     
     
