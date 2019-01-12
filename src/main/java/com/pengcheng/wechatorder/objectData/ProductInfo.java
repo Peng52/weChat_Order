@@ -1,11 +1,12 @@
 package com.pengcheng.wechatorder.objectData;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * @program: wechat-order
@@ -15,6 +16,7 @@ import java.time.LocalDate;
  **/
 @Entity
 @Data
+@DynamicUpdate
 public class ProductInfo {
     /**
     *商品ID
@@ -46,13 +48,21 @@ public class ProductInfo {
     */
     private String productDescription;
     /**
+    *商品的状态 0 上架 1 下架
+    */
+    private Integer productStatus;
+    /**
     *创建时间
     */
-    private LocalDate createTime;
+/*    @Column(columnDefinition="TIMESTAMP", insertable = false, updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)*/
+    private Date createTime;
     /**
     *更新时间
     */
-    private LocalDate updateTime;
+/*    @Column(columnDefinition="TIMESTAMP", insertable = false, updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)*/
+    private Date updateTime;
 
 
 

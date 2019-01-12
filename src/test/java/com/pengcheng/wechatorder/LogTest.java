@@ -35,8 +35,8 @@ public class LogTest extends WechatOrderApplicationTests {
     public void test2(){
         //新增
         ProductCategory category = new ProductCategory();
-        category.setCategoryName("家用电器");
-        category.setCategoryType(1);
+        category.setCategoryName("奢侈品");
+        category.setCategoryType(9090);
         repository.save(category);
     }
     //数据库中自动生成 create_time 与update_time 测试
@@ -60,6 +60,7 @@ public class LogTest extends WechatOrderApplicationTests {
         category.setCategoryName("江南");
 
         repository.saveAndFlush(category);
+
 
     }
 
